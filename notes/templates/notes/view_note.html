@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}View Note - Notebook{% endblock %}
+
+{% block content %}
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.content }}</p>
+    <a href="{% url 'note_list' %}" class="btn btn-secondary">Back to Notes</a>
+    <a href="{% url 'edit_note' note.pk %}" class="btn btn-warning">Edit Note</a>
+    <form action="{% url 'delete_note' note.pk %}" method="POST" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete Note</button>
+    </form>
+{% endblock %}

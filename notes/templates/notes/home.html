@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Notebook{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h1>Welcome to the Notebook App</h1>
+        <p class="lead">A simple and clean way to manage your notes.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-secondary btn-lg">Sign Up</a>
+    </div>
+{% endblock %}
